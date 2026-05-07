@@ -1,0 +1,319 @@
+.pet-card {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  animation: fadeIn 0.6s ease-out backwards;
+  position: relative;
+}
+
+.pet-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(168, 85, 247, 0.4);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.pet-image-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 80%; /* slightly less tall to fit new content */
+  overflow: hidden;
+  display: block;
+}
+
+.pet-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pet-card:hover .pet-image {
+  transform: scale(1.08);
+}
+
+.pet-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, transparent 40%, rgba(11, 17, 32, 0.9) 100%);
+  pointer-events: none;
+}
+
+.status-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+}
+
+.status-badge.available {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-badge.out-of-stock {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.wishlist-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.wishlist-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.wishlist-btn:hover {
+  background: rgba(236, 72, 153, 0.2);
+  border-color: #ec4899;
+  color: #ec4899;
+  transform: scale(1.1);
+}
+
+.wishlist-btn.active {
+  background: rgba(236, 72, 153, 0.2);
+  border-color: #ec4899;
+  color: #ec4899;
+}
+
+.cart-add-btn {
+  position: absolute;
+  top: 15px;
+  right: 65px; /* Offset from wishlist */
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+}
+
+.cart-add-btn svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.cart-add-btn:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: #a855f7;
+  color: #a855f7;
+  transform: scale(1.1);
+}
+
+.cart-add-btn.active {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: #a855f7;
+  color: #a855f7;
+}
+
+.pet-card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 10;
+  margin-top: -20px;
+}
+
+.pet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.pet-name {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f8fafc;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.pet-rating {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.star {
+  color: #fbbf24;
+}
+
+.pet-breed {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  font-family: 'Inter', sans-serif;
+}
+
+.pet-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.personality-tag {
+  background: rgba(236, 72, 153, 0.15);
+  color: #f472b6;
+}
+
+.type-tag {
+  background: rgba(99, 102, 241, 0.15);
+  color: #818cf8;
+}
+
+.pet-details {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.dot {
+  color: #475569;
+}
+
+.pet-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 16px;
+  gap: 16px;
+}
+
+.pet-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #f8fafc;
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  align-items: flex-start;
+}
+
+.currency {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  margin-right: 2px;
+}
+
+.pet-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-view-details {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-view-details:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.btn-adopt {
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #a855f7, #6366f1);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-adopt:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+}
+
+.btn-adopt:disabled {
+  background: rgba(255, 255, 255, 0.05);
+  color: #64748b;
+  cursor: not-allowed;
+  box-shadow: none;
+}

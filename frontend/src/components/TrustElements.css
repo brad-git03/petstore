@@ -1,0 +1,141 @@
+.trust-section {
+  padding: 100px 0;
+  position: relative;
+  background: linear-gradient(to bottom, #0b1120, #0f172a);
+}
+
+.trust-badges-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 100px;
+}
+
+.trust-badge-card {
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.trust-badge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #a855f7, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.trust-badge-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  background: rgba(30, 41, 59, 0.6);
+}
+
+.trust-badge-card:hover::before {
+  opacity: 1;
+}
+
+.trust-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.trust-icon {
+  font-size: 2.5rem;
+}
+
+.trust-badge-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 16px 0;
+  color: #f8fafc;
+}
+
+.trust-badge-card p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 48px;
+  background: linear-gradient(to right, #f8fafc, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #3b82f6;
+}
+
+.testimonial-name {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #e2e8f0;
+}
+
+.testimonial-role {
+  font-size: 0.85rem;
+  color: #818cf8;
+}
+
+.testimonial-stars {
+  margin-bottom: 16px;
+  font-size: 0.9rem;
+}
+
+.testimonial-text {
+  color: #cbd5e1;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}

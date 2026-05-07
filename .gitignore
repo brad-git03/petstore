@@ -1,0 +1,60 @@
+# Backend (Java/Spring Boot)
+backend/target/
+backend/build/
+backend/.gradle/
+backend/*.class
+backend/*.jar
+backend/*.log
+backend/.DS_Store
+backend/.env*
+backend/.idea/
+backend/*.iml
+
+# Frontend (Node.js/React)
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/*.log
+frontend/.DS_Store
+frontend/.env*
+frontend/.env.local
+frontend/.env.*.local
+frontend/.idea/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.suo
+*.user
+*.userosscache
+
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Yarn
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Database & Config
+*.sqlite
+*.db
+*.sqlite3
+
+# Misc
+dist/
+build/
+.cache/
+.turbo/
+turbo.json
