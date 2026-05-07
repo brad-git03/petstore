@@ -42,6 +42,7 @@ export default function usePetSearch(initialFilters = {}) {
       setHasMore(result.hasMore)
       setOffset((append ? offset : 0) + result.data.length)
     } catch (err) {
+      setHasMore(false)
       setError(err.message)
       console.error('Error fetching pets:', err)
     } finally {

@@ -95,7 +95,7 @@ export default function CatalogPage() {
             />
           )}
 
-          {petSearch.isLoading && petSearch.pets.length === 0 ? (
+          {petSearch.isLoading && petSearch.pets.length === 0 && !petSearch.error ? (
             <div className="loading-message">
               <div className="spinner"></div>
               <p>Loading your future best friends...</p>
