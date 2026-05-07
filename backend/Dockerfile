@@ -13,4 +13,4 @@ COPY --from=build /app/target/petstore-backend-1.0.0.jar ./petstore-backend-1.0.
 
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "export SPRING_DATASOURCE_URL=$(printf '%s' \"$DATABASE_URL\" | sed 's|^postgresql://|jdbc:postgresql://|'); exec java -jar /app/petstore-backend-1.0.0.jar"]
+ENTRYPOINT ["sh", "-c", "connection_string=\"$DATABASE_URL\"; connection_string=${connection_string#postgresql://}; credentials_and_host=${connection_string%%/*}; database_name=${connection_string#*/}; username=${credentials_and_host%%:*}; password_and_host=${credentials_and_host#*:}; password=${password_and_host%%@*}; host_and_port=${password_and_host#*@}; export SPRING_DATASOURCE_URL=jdbc:postgresql://$host_and_port/$database_name; export SPRING_DATASOURCE_USERNAME=$username; export SPRING_DATASOURCE_PASSWORD=$password; exec java -jar /app/petstore-backend-1.0.0.jar"]
