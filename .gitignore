@@ -10,6 +10,11 @@ backend/.env*
 backend/.idea/
 backend/*.iml
 
+# Root env files
+/.env
+/.env.local
+/.env.*
+
 # Frontend (Node.js/React)
 frontend/node_modules/
 frontend/build/
